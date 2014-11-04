@@ -1,0 +1,22 @@
+h1 Movie Rental
+div ng-controller='MoviesController'
+  form name='movieForm' ng-submit='addMovie(movie)'
+      p
+        input ng-model='movie.name' type='text' placeholder='film name' required='required'
+      p
+        input ng-model='movie.director' type='text' placeholder='director' required='required'
+      p
+        input type='submit' value='add movie'
+
+  table#moviesTable ng-show='movie.name || movie.director || movies'
+    tr
+      th NAME
+      th DIRECTOR
+    tr ng-repeat='movie in movies'
+      td ng-bind='movie.name'
+      td ng-bind='movie.director'
+      td
+        button ng-click='deleteMovie(movie)' DELETE
+    tr ng-show='movie.name || movie.director'
+      td ng-bind='movie.name'
+      td ng-bind='movie.director'

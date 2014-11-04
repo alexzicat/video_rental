@@ -1,0 +1,1 @@
+video_rental = angular.module('video-rental', ['movies'])
